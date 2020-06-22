@@ -1,0 +1,9 @@
+  apiVersion: v1
+  kind: Endpoints
+  metadata:
+      name: sqlserver-svc
+  subsets:
+      - addresses:
+          - ip: 192.168.0.101
+        ports:
+          - port: 1433

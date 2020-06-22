@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod  # object type -> that will reside kubernetes cluster
+metadata: 
+    name: simptekapi-api-pod
+    labels:
+        component: web
+spec:
+    containers:
+        - name: simptekapi-api
+          image: nayan2/simptekapi
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DATABASE_HOST
+              value: "sqlserver-svc:1443\\SQLEXPRESS"
+            - name: DATABASE_PORT
+              value: '1433'
+            - name: DATABASE_USER
+              value: sa
+            - name: DATABASE_PW
+              value: p7836y617u
+            - name: JWT_SECRET
+              value: securebuilding360
+            - name: NODE_ENV
+              value: production

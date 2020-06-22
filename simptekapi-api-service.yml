@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: simptekapi-api-node-port
+spec:
+    type: NodePort
+    ports:
+        - port: 4200
+          targetPort: 5000
+          nodePort: 31515
+    selector:
+        component: web
